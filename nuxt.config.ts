@@ -56,6 +56,8 @@ export default defineNuxtConfig({
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
       meta: [
+        { name: 'title', content: 'Nuxt 3 PWA' },
+        { name: 'description', content: 'Nuxt 3 PWA Application' },
         { name: 'apple-mobile-web-app-capable', content: 'yes' },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
         { name: 'apple-mobile-web-app-title', content: 'NuxtPWA' },
