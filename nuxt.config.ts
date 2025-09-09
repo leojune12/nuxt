@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  app: {
+    baseURL: '/nuxt/', // Replace with your repository name
+    buildAssetsDir: 'assets',
+  },
   modules: [
     '@nuxt/fonts',
     '@nuxt/icon',
@@ -17,24 +21,24 @@ export default defineNuxtConfig({
       description: 'Nuxt 3 PWA Application',
       background_color: '#ffffff',
       display: 'standalone',
-      start_url: '/?standalone=true',
-      scope: '/',
+      start_url: '/nuxt/?standalone=true',
+      scope: '/nuxt/',
       orientation: 'portrait',
       categories: ['productivity'],
       prefer_related_applications: false,
       icons: [
         {
-          src: 'pwa-192x192.png',
+          src: '/nuxt/pwa-192x192.png',
           sizes: '192x192',
           type: 'image/png',
         },
         {
-          src: 'pwa-512x512.png',
+          src: '/nuxt/pwa-512x512.png',
           sizes: '512x512',
           type: 'image/png',
         },
         {
-          src: 'pwa-512x512.png',
+          src: '/nuxt/pwa-512x512.png',
           sizes: '512x512',
           type: 'image/png',
           purpose: 'any maskable'
@@ -52,6 +56,8 @@ export default defineNuxtConfig({
     }
   },
   app: {
+    baseURL: '/nuxt/', // Replace with your repository name
+    buildAssetsDir: 'assets',
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
@@ -65,8 +71,8 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#ffffff' }
       ],
       link: [
-        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
-        { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#ffffff' }
+        { rel: 'apple-touch-icon', href: '/nuxt/apple-touch-icon.png' },
+        { rel: 'mask-icon', href: '/nuxt/safari-pinned-tab.svg', color: '#ffffff' }
       ]
     }
   }
