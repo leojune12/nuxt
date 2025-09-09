@@ -17,8 +17,11 @@ export default defineNuxtConfig({
       description: 'Nuxt 3 PWA Application',
       background_color: '#ffffff',
       display: 'standalone',
-      start_url: '/',
+      start_url: '/?standalone=true',
       scope: '/',
+      orientation: 'portrait',
+      categories: ['productivity'],
+      prefer_related_applications: false,
       icons: [
         {
           src: 'pwa-192x192.png',
@@ -52,6 +55,17 @@ export default defineNuxtConfig({
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
+      meta: [
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+        { name: 'apple-mobile-web-app-title', content: 'NuxtPWA' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { name: 'theme-color', content: '#ffffff' }
+      ],
+      link: [
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+        { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#ffffff' }
+      ]
     }
   }
 })
