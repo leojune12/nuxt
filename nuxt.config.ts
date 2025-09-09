@@ -16,6 +16,9 @@ export default defineNuxtConfig({
       theme_color: '#ffffff',
       description: 'Nuxt 3 PWA Application',
       background_color: '#ffffff',
+      display: 'standalone',
+      start_url: '/',
+      scope: '/',
       icons: [
         {
           src: 'pwa-192x192.png',
@@ -39,12 +42,16 @@ export default defineNuxtConfig({
       enabled: true,
       suppressWarnings: true,
       type: 'module'
+    },
+    client: {
+      installPrompt: true,
+      periodicSyncForUpdates: 3600
     }
   },
   app: {
     head: {
       charset: "utf-8",
-      viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+      viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
     }
   }
 })
