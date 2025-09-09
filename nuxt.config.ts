@@ -2,10 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  app: {
-    baseURL: '/nuxt/', // Replace with your repository name
-    buildAssetsDir: 'assets',
-  },
   modules: [
     '@nuxt/fonts',
     '@nuxt/icon',
@@ -56,14 +52,13 @@ export default defineNuxtConfig({
     }
   },
   app: {
-    baseURL: '/nuxt/', // Replace with your repository name
+    baseURL: '/nuxt/',
     buildAssetsDir: 'assets',
     head: {
+      title: 'Nuxt 3 PWA',
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
       meta: [
-        { name: 'title', content: 'Nuxt 3 PWA' },
-        { name: 'description', content: 'Nuxt 3 PWA Application' },
         { name: 'apple-mobile-web-app-capable', content: 'yes' },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
         { name: 'apple-mobile-web-app-title', content: 'NuxtPWA' },
@@ -71,6 +66,7 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#ffffff' }
       ],
       link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/nuxt/favicon.ico' },
         { rel: 'apple-touch-icon', href: '/nuxt/apple-touch-icon.png' },
         { rel: 'mask-icon', href: '/nuxt/safari-pinned-tab.svg', color: '#ffffff' }
       ]
