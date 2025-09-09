@@ -35,33 +35,16 @@ export default defineNuxtConfig({
         }
       ]
     },
-    workbox: {
-      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
-      runtimeCaching: [
-        {
-          urlPattern: '/',
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'page-cache'
-          }
-        },
-        {
-          urlPattern: /^https:\/\/api\./i,
-          handler: 'NetworkFirst',
-          options: {
-            cacheName: 'api-cache',
-            cacheableResponse: {
-              statuses: [0, 200]
-            }
-          }
-        }
-      ],
-      cleanupOutdatedCaches: true
-    },
     devOptions: {
       enabled: true,
       suppressWarnings: true,
       type: 'module'
+    }
+  },
+  app: {
+    head: {
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1, maximum-scale=1",
     }
   }
 })
